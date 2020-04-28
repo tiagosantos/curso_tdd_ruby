@@ -25,4 +25,10 @@ class CalculadoraDeSalarioTest < Test::Unit::TestCase
     salario = calculadora.calcula_salario desenvolvedor
     assert_equal 500 * 0.85, salario
   end
+  def teste_deve_calcular_salario_para_DBAs_com_salario_cima_do_limite
+    calculadora = CalculadoraDeSalario.new
+    desenvolvedor = Funcionario.new('Mauricio', 4500.0, Cargo::DBA)
+    salario = calculadora.calcula_salario desenvolvedor
+    assert_equal 4500 * 0.75, salario
+  end
 end

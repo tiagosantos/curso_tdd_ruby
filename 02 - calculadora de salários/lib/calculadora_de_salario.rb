@@ -1,6 +1,16 @@
+require File.expand_path('./funcionario.rb',
+    File.dirname(__FILE__))
+
 class CalculadoraDeSalario
     def calcula_salario funcionario
-        return funcionario.salario * 0.8 if funcionario.salario > 3000
-        return funcionario.salario * 0.9
+        funcionario.salario * (
+            salario_acima_do_limite(funcionario) ? 
+            funcionario.cargo[:porcentagem_acima_do_limite] : 
+            funcionario.cargo[:porcentagem_base]
+        )
+    end
+    def salario_acima_do_limite funcionario
+        funcionario.salario > funcionario.cargo[:limite]
     end
 end
+
