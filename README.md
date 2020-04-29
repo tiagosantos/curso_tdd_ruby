@@ -5,3 +5,4 @@
 ### 01 Conversão de algarismos romanos
 ### 02 Calculadora de salários
 ### 03 Carrinho de compras
+### 04 Gerador de Nota Fiscal
